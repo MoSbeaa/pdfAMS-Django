@@ -1,0 +1,104 @@
+{% extends 'webapp/base.html' %}
+
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+<body>
+
+    <div class="container bg-light shadow-md p-5 form-layout">
+
+        <h3> Update record </h3>
+
+        <h6> Update your record down below. </h6>
+
+        <hr>
+        <br>
+
+        <form method="POST" autocomplete="off">
+
+            {% csrf_token %}
+
+            {% comment %} {{ UpdateForm.as_p }} {% endcomment %}
+
+            {{UpdateForm.Full_name|as_crispy_field}}
+
+            <br>
+            {{UpdateForm.Date_of_birth|as_crispy_field}}
+            
+
+            <br>
+
+            {{UpdateForm.SIN|as_crispy_field}}
+
+            <br>
+            {{UpdateForm.Date_of_hire|as_crispy_field}}
+            
+            <br>
+
+            {{UpdateForm.Address|as_crispy_field}}
+
+            <br>
+
+            {{UpdateForm.City|as_crispy_field}}
+
+            <br>
+
+            {{UpdateForm.Zip|as_crispy_field}}
+
+            <br>
+
+            {{UpdateForm.State|as_crispy_field}}
+
+            <br>
+            {{UpdateForm.Home_phone|as_crispy_field}}
+
+            <br>
+
+            {{UpdateForm.Cell_phone|as_crispy_field}}
+
+            <br>
+
+            {{UpdateForm.Spouse_name|as_crispy_field}}
+
+            <br>
+
+            {{UpdateForm.Em_name|as_crispy_field}}
+
+            <br>
+
+            {{UpdateForm.Em_relationship|as_crispy_field}}
+
+            <br>
+            {{UpdateForm.Date|as_crispy_field}}
+            
+            <br>
+
+
+            <button type="submit" class="btn btn-info"> 
+                
+                Update record &nbsp; <i class="fa fa-plus" aria-hidden="true"></i>
+            
+            </button>
+
+            &nbsp; 
+            
+            <a href="{% url 'dashboard' %}" class="btn btn-secondary"> 
+
+
+                Return &nbsp; <i class="fa fa-arrow-left" aria-hidden="true"></i>
+
+            </a>
+
+
+        </form>
+
+    </div>
+
+    <br>
+
+</body>
+
+
+{% endblock %}
